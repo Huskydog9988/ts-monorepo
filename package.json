@@ -3,21 +3,24 @@
   "description": "Template for setting up a TypeScript monorepo",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "examples/*"
+    "packages/*"
   ],
   "scripts": {
-    "docs": "doctoc --title '**Table of content**' README.md",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "lerna publish",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --fix"
   },
   "devDependencies": {
-    "@nighttrax/eslint-config-tsx": "~7.0.0",
-    "doctoc": "~2.0.0",
-    "eslint": "~7.16.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "lerna": "~3.22.0",
+    "prettier": "^2.2.1",
     "typescript": "~4.1.0"
   }
 }
